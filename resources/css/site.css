@@ -4,10 +4,15 @@
 @import url("fonts/fonts.css");
 
 body{
-    @apply font-matter text-gray-700;
+    @apply font-matter text-gray-900 font-medium;
 }
 
 .btn-primary{
-    @apply border rounded-full py-3 px-8 bg-green-900 text-white
+    @apply border rounded-lg py-3 px-8 bg-green-900 text-white border-green-900 hover:bg-green-800
 }
+
+.btn-secondary{
+    @apply border rounded-lg py-3 px-8 bg-yellow-500 text-white border-yellow-500 hover:bg-yellow-600
+}
+
 

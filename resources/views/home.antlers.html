@@ -1,0 +1,58 @@
+<main>
+    <section>
+        {{ asset url="/assets/static/cows-feeding.jpg" }}
+        <div class="bg-center bg-no-repeat bg-cover h-[70vh]" style="background-image: url('{{url}}')">
+            <div class="flex h-full self-center bg-black/20 p-10">
+               <div class="text-white my-auto w-full md:w-1/2 ">
+                   <h2 class="text-md font-bold uppercase">Nutrimzuri Farmcare Limited</h2>
+                   <h1 class="font-black text-5xl">
+                       We incorporate principles of circular economy to produce sustainable
+                       animal feeds and feed ingredients.
+                   </h1>
+
+                   <div class="my-8 px-5 flex gap-3 items-center">
+                      <a href="{{ link to='about-us' absolute='true' }}" class="btn-primary text-lg flex items-center gap-4 hover:gap-6 transition-all duration-300">
+                          Learn More
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 24 24">
+                              <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"/>
+                          </svg>
+                      </a>
+
+                       <a href="{{ link to='our-outlets' absolute='true' }}" class="text-xl font-medium flex items-center gap-1 underline">
+                           <span>Locate our outlets</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-500 h-5" viewBox="0 0 24 24">
+                               <path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794l-1.414-1.414L17.585 5H13V3z"/>
+                           </svg>
+                       </a>
+
+                   </div>
+               </div>
+            </div>
+        </div>
+        {{ /asset }}
+
+
+    </section>
+
+    <section class="pb-8">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="grid md:grid-cols-4 gap-3">
+                <div class="border rounded-sm overflow-hidden">
+                    <div class="h-2 bg-yellow-500"></div>
+                    <div class="p-5">
+                        <h2 class="font-bold text-green-900 text-lg my-2">Sustainability</h2>
+                        <p class="text-lg leading-relaxed">
+                            Discover how Nutrimzuri is revolutionizing the manufacturing of sustainable feeds.
+                            By utilizing innovative techniques and eco-friendly raw materials, we minimize environmental
+                            impact while maintaining high nutritional value.
+
+                        </p>
+                    </div>
+                    <div class="border-t p-5">
+                        <a class="text-yellow-500">Read article...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
