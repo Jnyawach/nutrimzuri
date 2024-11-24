@@ -1,0 +1,126 @@
+<section class="hidden lg:block">
+    <nav class="p-3 flex justify-between px-5 items-center border-b gap-5">
+        <div>
+            {{brand}}
+            <a href="/" title="Nutrimzuri Logo">
+                <img src="{{green_logo}}" class="h-16" alt="Nutrimzuri Logo">
+            </a>
+            {{/brand}}
+        </div>
+        <div class="flex-grow flex justify-end w-full">
+           <div class="space-y-5">
+               <ul class="font-medium flex items-center gap-5 text-sm justify-end">
+                   <li class="flex gap-1 items-center">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-green-900" viewBox="0 0 24 24">
+                           <path fill="currentColor" d="M9.366 10.682a10.56 10.56 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296a11.4 11.4 0 0 0 4.583 1.364a1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995Q19.307 21 18.5 21C9.94 21 3 14.06 3 5.5q0-.807.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.4 11.4 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294zm-2.522-.657l1.9-1.357A13.4 13.4 0 0 1 7.647 5H5.01Q5 5.25 5 5.5C5 12.956 11.044 19 18.5 19q.25 0 .5-.01v-2.637a13.4 13.4 0 0 1-3.668-1.097l-1.357 1.9a12.5 12.5 0 0 1-1.588-.75l-.058-.033a12.56 12.56 0 0 1-4.702-4.702l-.033-.058a12.4 12.4 0 0 1-.75-1.588"/>
+                       </svg>
+                       <p>+254 726 811 123</p>
+                   </li>
+                   <li class="flex gap-1 items-center">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-green-900" viewBox="0 0 24 24">
+                           <path fill="currentColor" d="M21 3a1 1 0 0 1 1 1v16.007a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V19h18V7.3l-8 7.2l-10-9V4a1 1 0 0 1 1-1zM8 15v2H0v-2zm-3-5v2H0v-2zm14.566-5H4.434L12 11.81z"/>
+                       </svg>
+                       <p>support@nutrimzuri.co.ke</p>
+                   </li>
+               </ul>
+
+               <ul class="flex gap-8 font-medium items-center">
+                   {{nav:main_navigation}}
+                   <li class="py-1">
+                       <a href="{{url}}" title="{{title}}" class="hover:underline">{{title}}</a>
+                   </li>
+                   {{/nav:main_navigation}}
+                   {{nav:contact}}
+                   <li>
+                       <a href="{{url}}" title="{{title}}" class="hover:underline">
+                           <button class="btn-primary flex items-center gap-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-white" viewBox="0 0 24 24">
+                                   <path fill="currentColor" d="M9.366 10.682a10.56 10.56 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296a11.4 11.4 0 0 0 4.583 1.364a1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995Q19.307 21 18.5 21C9.94 21 3 14.06 3 5.5q0-.807.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.4 11.4 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294zm-2.522-.657l1.9-1.357A13.4 13.4 0 0 1 7.647 5H5.01Q5 5.25 5 5.5C5 12.956 11.044 19 18.5 19q.25 0 .5-.01v-2.637a13.4 13.4 0 0 1-3.668-1.097l-1.357 1.9a12.5 12.5 0 0 1-1.588-.75l-.058-.033a12.56 12.56 0 0 1-4.702-4.702l-.033-.058a12.4 12.4 0 0 1-.75-1.588"/>
+                               </svg>
+                               <span>{{title}}</span>
+                           </button>
+                       </a>
+                   </li>
+                   {{/nav:contact}}
+
+               </ul>
+           </div>
+        </div>
+    </nav>
+</section>
+
+<section class="border-b bg-white lg:hidden">
+    <div class="flex justify-between px-3 my-3">
+        <div>
+            {{brand}}
+            <a href="/" title="Nutrimzuri Logo">
+                <img src="{{green_logo}}" class="h-10" alt="Nutrimzuri Logo">
+            </a>
+            {{/brand}}
+        </div>
+        <div class="grid">
+            <ul class="flex items-center gap-6 px-2 py-2">
+
+
+                <li>
+                    <button type="button"  data-drawer-target="menu-drawer" data-drawer-show="menu-drawer" data-drawer-placement="right" aria-controls="menu-drawer">
+                        <svg class="h-6 fill-green-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3 4h18v2H3zm0 7h18v2H3zm0 7h18v2H3z"/>
+                        </svg>
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<div id="menu-drawer" class="fixed top-0 right-0 z-40 h-screen  overflow-y-auto transition-transform translate-x-full bg-white w-full" tabindex="-1" aria-labelledby="drawer-label">
+    <div class="border-b">
+        <div class="flex justify-between items-center p-5">
+            {{brand}}
+            <a href="/" title="Nutrimzuri Logo">
+                <img src="{{green_logo}}" class="h-10" alt="Nutrimzuri Logo">
+            </a>
+            {{/brand}}
+            <button type="button" data-drawer-hide="menu-drawer" aria-controls="drawer-example" class="text-xl" >
+
+                <svg class="h-6 w-6 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path d="M315.3 411.3c-6.253 6.253-16.37 6.253-22.63 0L160 278.6l-132.7 132.7c-6.253 6.253-16.37 6.253-22.63 0c-6.253-6.253-6.253-16.37 0-22.63L137.4 256L4.69 123.3c-6.253-6.253-6.253-16.37 0-22.63c6.253-6.253 16.37-6.253 22.63 0L160 233.4l132.7-132.7c6.253-6.253 16.37-6.253 22.63 0c6.253 6.253 6.253 16.37 0 22.63L182.6 256l132.7 132.7C321.6 394.9 321.6 405.1 315.3 411.3z"/>
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="my-3 p-3">
+        <ul class="space-y-5">
+            {{nav:main_navigation}}
+            <li>
+                <a href="{{url}}" title="{{title}}" class="w-full flex justify-between font-medium">
+                    <span>{{title}}</span>
+                    <svg class="h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                        <path d="M219.9 266.7L75.89 426.7c-5.906 6.562-16.03 7.094-22.59 1.188c-6.918-6.271-6.783-16.39-1.188-22.62L186.5 256L52.11 106.7C46.23 100.1 46.75 90.04 53.29 84.1C59.86 78.2 69.98 78.73 75.89 85.29l144 159.1C225.4 251.4 225.4 260.6 219.9 266.7z"/>
+                    </svg>
+                </a>
+            </li>
+            {{/nav:main_navigation}}
+            {{nav:contact}}
+            <li>
+                <a href="{{url}}" title="{{title}}" class="hover:underline">
+                    <button class="btn-primary flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-white" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M9.366 10.682a10.56 10.56 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296a11.4 11.4 0 0 0 4.583 1.364a1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995Q19.307 21 18.5 21C9.94 21 3 14.06 3 5.5q0-.807.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.4 11.4 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294zm-2.522-.657l1.9-1.357A13.4 13.4 0 0 1 7.647 5H5.01Q5 5.25 5 5.5C5 12.956 11.044 19 18.5 19q.25 0 .5-.01v-2.637a13.4 13.4 0 0 1-3.668-1.097l-1.357 1.9a12.5 12.5 0 0 1-1.588-.75l-.058-.033a12.56 12.56 0 0 1-4.702-4.702l-.033-.058a12.4 12.4 0 0 1-.75-1.588"/>
+                        </svg>
+                        <span>{{title}}</span>
+                    </button>
+                </a>
+            </li>
+            {{/nav:contact}}
+
+        </ul>
+    </div>
+
+</div>
+

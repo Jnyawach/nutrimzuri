@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import {initFlowbite} from "flowbite";
 export default {
     content: [
         './resources/**/*.antlers.html',
@@ -6,13 +7,18 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.vue',
         './content/**/*.md',
+        "./node_modules/flowbite/**/*.js"
     ],
 
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'matter': ['Matter', 'serif'],
+            },
+        },
     },
 
     plugins: [
-        require('@tailwindcss/typography'),
+        initFlowbite
     ],
 };

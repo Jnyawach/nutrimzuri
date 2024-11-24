@@ -1,0 +1,27 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: green_logo
+            field:
+              max_files: 1
+              container: assets
+              folder: static
+              type: assets
+              display: 'Green Logo'
+          -
+            handle: yello_logo
+            field:
+              max_files: 1
+              container: assets
+              folder: static
+              type: assets
+              display: 'Yello logo'
+  new_tab:
+    display: 'New Tab'
+    sections:
+      -
+        display: 'New Section'

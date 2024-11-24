@@ -1,5 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("fonts/fonts.css");
 
-/* This is all you. */
+body{
+    @apply font-matter text-gray-700;
+}
+
+.btn-primary{
+    @apply border rounded-full py-3 px-8 bg-green-900 text-white
+}
+
