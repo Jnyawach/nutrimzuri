@@ -4,7 +4,7 @@
 @import url("fonts/fonts.css");
 
 body{
-    @apply font-matter text-gray-900 font-medium;
+    @apply font-matter text-gray-800 font-medium;
 }
 
 .btn-primary{
