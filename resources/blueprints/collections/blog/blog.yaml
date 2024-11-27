@@ -13,13 +13,13 @@ tabs:
               validate:
                 - required
           -
-            handle: blog_content
+            handle: content
             field:
               remove_empty_nodes: false
               placeholder: 'Write blog content'
               container: assets
               type: bard
-              display: 'Blog content'
+              display: Content
           -
             handle: meta_description
             field:

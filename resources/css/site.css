@@ -15,4 +15,8 @@ body{
     @apply border rounded-lg py-3 px-8 bg-yellow-500 text-white border-yellow-500 hover:bg-yellow-600
 }
 
+.btn-outline{
+    @apply border rounded-lg py-3 px-5 text-green-900 hover:bg-green-500/10 hover:border-green-900 duration-500
+}
+
 

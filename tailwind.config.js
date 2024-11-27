@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-
+//import typography
+import typography from '@tailwindcss/typography';
 export default {
     content: [
         './resources/**/*.antlers.html',
@@ -19,6 +20,6 @@ export default {
     },
 
     plugins: [
-
+        typography,
     ],
 };

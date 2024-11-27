@@ -30,6 +30,12 @@
                        <a href="{{url}}" title="{{title}}" class="hover:underline">{{title}}</a>
                    </li>
                    {{/nav:main_navigation}}
+                   <li class="cursor-pointer" data-modal-target="default-modal" data-modal-toggle="default-modal">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5"  viewBox="0 0 24 24">
+                           <path fill="currentColor" d="m18.031 16.617l4.283 4.282l-1.415 1.415l-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9s9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617m-2.006-.742A6.98 6.98 0 0 0 18 11c0-3.867-3.133-7-7-7s-7 3.133-7 7s3.133 7 7 7a6.98 6.98 0 0 0 4.875-1.975z"/>
+                       </svg>
+                   </li>
+
                    {{nav:contact}}
                    <li>
                        <a href="{{url}}" title="{{title}}">
@@ -42,6 +48,7 @@
                        </a>
                    </li>
                    {{/nav:contact}}
+
 
                </ul>
            </div>
@@ -60,6 +67,11 @@
         </div>
         <div class="grid">
             <ul class="flex items-center gap-6 px-2 py-2">
+                <li class="cursor-pointer" data-modal-target="default-modal" data-modal-toggle="default-modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5"  viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m18.031 16.617l4.283 4.282l-1.415 1.415l-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9s9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617m-2.006-.742A6.98 6.98 0 0 0 18 11c0-3.867-3.133-7-7-7s-7 3.133-7 7s3.133 7 7 7a6.98 6.98 0 0 0 4.875-1.975z"/>
+                    </svg>
+                </li>
 
 
                 <li>
@@ -125,5 +137,26 @@
         </ul>
     </div>
 
+
+
+
+</div>
+
+<div id="default-modal" data-modal-placement="top-center" tabindex="-1" aria-hidden="true" class="hidden bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <div class="bg-white w-full  p-3 rounded-md">
+            <form action="/search">
+                <div class="flex divide-x border h-11 rounded-md overflow-hidden">
+                    <input type="search" autofocus name="q" placeholder="Search"
+                           class="font-normal p-2 border-0 flex-grow">
+                    <button type="submit" class="border-0 bg-gray-50 px-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-green-900"  viewBox="0 0 24 24">
+                            <path fill="currentColor" d="m18.031 16.617l4.283 4.282l-1.415 1.415l-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9s9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617m-2.006-.742A6.98 6.98 0 0 0 18 11c0-3.867-3.133-7-7-7s-7 3.133-7 7s3.133 7 7 7a6.98 6.98 0 0 0 4.875-1.975z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
