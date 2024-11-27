@@ -48,6 +48,7 @@ tabs:
               type: template
               display: Template
               localizable: true
+              folder: blog
           -
             handle: author
             field:

@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Green Lanscape'
 size: 842239
 last_modified: 1732702455
 width: 1000
