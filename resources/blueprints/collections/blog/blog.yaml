@@ -29,14 +29,6 @@ tabs:
                 - required
                 - 'max:250'
           -
-            handle: author
-            field:
-              type: users
-              display: Author
-              default: current
-              localizable: true
-              max_items: 1
-          -
             handle: post_image
             field:
               max_files: 1
@@ -56,6 +48,16 @@ tabs:
               type: template
               display: Template
               localizable: true
+          -
+            handle: author
+            field:
+              max_items: 1
+              collections:
+                - authors
+              type: entries
+              display: Author
+              validate:
+                - required
   sidebar:
     display: Sidebar
     sections:
