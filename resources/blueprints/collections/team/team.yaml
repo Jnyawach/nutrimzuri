@@ -1,0 +1,48 @@
+title: Team
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+                - 'max:100'
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+              validate:
+                - required
+          -
+            handle: profile_picture
+            field:
+              max_files: 1
+              min_files: 1
+              container: team
+              type: assets
+              display: 'Profile Picture'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
