@@ -1,0 +1,51 @@
+<section>
+    <div class="mx-auto max-w-[1280px]">
+        <div class="py-10 px-3 md:px-10">
+            <h1 class="text-4xl font-bold">Our Outlets</h1>
+            {{collection:outlets paginate="10" as="shops"}}
+            <div class="my-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 py-10">
+
+                {{ if no_results }}
+                <p class="text-lg">Aww, there are no results.</p>
+                {{ /if }}
+                {{shops}}
+                <div class="bg-white border relative rounded-sm overflow-hidden">
+                    <img src="{{glide :src='outlet_image' width='300' height='200' fit='crop_focal'}}" alt="{{outlet_image:alt}}">
+                    <div class="p-3">
+                        <h2 class="font-bold text-xl">{{title}}</h2>
+                        <p>{{description}}</p>
+                        {{if longitude && latitude}}
+                        <a class="text-green-900 underline flex gap-2 items-center" target="_blank"
+                           href="https://www.google.com/maps/place/{{latitude}},{{longitude}}">
+                            <span>View directions</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794l-1.414-1.414L17.585 5H13V3z"/>
+                            </svg>
+                        </a>
+                        {{/if}}
+                    </div>
+
+
+
+
+                </div>
+                {{/shops}}
+
+
+
+            </div>
+            <div class="my-5 flex justify-center">
+                <div>
+                    {{ paginate }}
+                    <a href="{{ prev_page }}" class="btn-outline-primary btn-small">⬅</a>
+
+                    <span class="mx-2">Page {{ current_page }} of {{ total_pages }}</span>
+
+                    <a href="{{ next_page }}" class="btn-outline-primary btn-small">➡</a>
+                    {{ /paginate }}
+                </div>
+            </div>
+            {{/collection:outlets}}
+        </div>
+    </div>
+</section>

@@ -4,5 +4,6 @@ blueprint: page
 title: 'Our Outlets'
 author: ffb86834-185f-48aa-b383-224d5267976f
 updated_by: ffb86834-185f-48aa-b383-224d5267976f
-updated_at: 1732454058
+updated_at: 1732805286
+template: our-outlets/index
 ---

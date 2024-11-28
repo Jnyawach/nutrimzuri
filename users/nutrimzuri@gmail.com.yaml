@@ -24,3 +24,12 @@ preferences:
         - title
         - full_name
         - status
+    outlets:
+      after_save: create_another
+      columns:
+        - title
+        - slug
+        - status
+        - outlet_image
+        - longitude
+        - latitude
