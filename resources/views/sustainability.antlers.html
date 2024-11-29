@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<section>
+    {{ asset url="/assets/static/sustainable-feeds.jpg" }}
+    <img src="{{url}}" class="w-full" alt="{{alt}}">
+    {{ /asset }}
+</section>
+<section class="mx-auto max-w-[1280px] py-10 space-y-8 p-3">
+    <div>
+        <h1 class="text-3xl font-black my-3">Sustainability</h1>
+        <div>
+            <div class="max-w-full prose lg:prose-xl prose-p:leading-loose
+                prose-p:font-medium prose-heading:my-5 prose-h2:text-2xl
+                prose-img:w-full
+                prose-a:text-underline prose-heading:text-xl prose-p:text-lg"
+            >
+                {{content}}
+            </div>
+        </div>
+    </div>
+</section>
