@@ -1,0 +1,86 @@
+title: Testimonial
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: hidden
+              required: false
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+          -
+            handle: profession
+            field:
+              type: text
+              display: Profession
+              validate:
+                - required
+          -
+            handle: organization
+            field:
+              type: text
+              display: Organization
+          -
+            handle: profile_picture
+            field:
+              max_files: 1
+              container: assets
+              folder: testimonial
+              type: assets
+              display: 'Profile Picture'
+      -
+        display: Testimony
+        instructions: 'Testimonial details'
+        fields:
+          -
+            handle: summary
+            field:
+              type: textarea
+              display: Summary
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              validate:
+                - required
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+              container: models
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

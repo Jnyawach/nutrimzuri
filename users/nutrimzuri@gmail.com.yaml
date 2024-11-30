@@ -33,3 +33,10 @@ preferences:
         - outlet_image
         - longitude
         - latitude
+    testimonials:
+      columns:
+        - profile_picture
+        - profession
+        - full_name
+        - organization
+        - status

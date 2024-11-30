@@ -1,0 +1,37 @@
+title: FAQ
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: hidden
+              required: false
+          -
+            handle: question
+            field:
+              type: text
+              display: Question
+              validate:
+                - required
+          -
+            handle: answer
+            field:
+              remove_empty_nodes: false
+              container: models
+              type: bard
+              display: Answer
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

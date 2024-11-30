@@ -1,0 +1,77 @@
+<section>
+    <div class="mx-auto max-w-[1280px] py-10 px-3 md:px-24">
+        <div>
+            <h1 class="text-4xl font-bold font-poppins my-5 text-center">Frequently Asked Questions</h1>
+            <p class="text-xl text-center my-3">Have any Questions? We are here to help.</p>
+        </div>
+
+
+
+
+        <div class="my-5">
+            {{collection:faqs paginate="10" as="faqs"}}
+
+            {{ if no_results }}
+            <p class="text-lg">Aww, there are no results.</p>
+            {{ /if }}
+            {{faqs}}
+            <div>
+
+
+                <div id="{{id}}" data-accordion="collapse" class="border-b">
+                    <h2 id="{{id}}head">
+                        <button type="button" class="flex items-center justify-between w-full p-3 font-medium text-left text-gray-500 "
+                                data-accordion-target="#body{{id}}" aria-expanded="{{index==0?'true':'false'}}" aria-controls="body{{id}}">
+                            <span class="text-lg font-medium">{{title}}</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="body{{id}}" class="hidden" aria-labelledby="{{id}}head">
+                        <div class="p-5">
+                            <div class="max-w-full prose lg:prose-xl prose-p:leading-loose prose-a:underline prose-a:text-green-900
+    prose-p:font-medium prose-heading:my-5 prose-h2:text-2xl
+    prose-a:text-underline prose-heading:text-xl prose-p:text-lg">
+                                {{answer}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            {{/faqs}}
+            <div class="my-10 flex justify-center">
+                <div>
+                    {{ paginate }}
+                    <a href="{{ prev_page }}" class="btn-outline-primary btn-small">⬅</a>
+
+                    <span class="mx-2">Page {{ current_page }} of {{ total_pages }}</span>
+
+                    <a href="{{ next_page }}" class="btn-outline-primary btn-small">➡</a>
+                    {{ /paginate }}
+                </div>
+            </div>
+            {{/collection:faqs}}
+        </div>
+
+        <div class="py-10 flex justify-center">
+            <div>
+                <div class="flex justify-center">
+                    {{ asset url="/assets/static/lady-smiling-on-call.jpg" }}
+                    <img src="{{url}}" alt="{{alt}}" class="h-14 rounded-full">
+                    {{/asset}}
+                </div>
+                <h6 class="font-bold text-bold text-center my-2">Still have Questions?</h6>
+                <p class="my-2 text-center">Can't find the answers you are looking for?
+                    <a title="Contact us"  href="{{ link to='contact-us' absolute='true' }}"
+                       class="font-bold underline text-green-900">Please contact our friendly team</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+

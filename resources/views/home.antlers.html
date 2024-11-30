@@ -130,4 +130,30 @@
             </div>
         </div>
     </section>
+    <section class="bg-slate-100 p-3">
+        <div class="max-w-[1280px] mx-auto my-5 p-3">
+            <div class="flex justify-between">
+                <h2 class="text-3xl font-black my-3">Customer Success stories</h2>
+                <a href="{{ link to='blog' absolute='true' }}" >
+                    <button class="btn-outline">
+                       See all stories
+                    </button>
+                </a>
+            </div>
+            <div class="my-3">
+                <p class="text-lg">
+                    At Nutrimzuri we treat our customer success as our own. We are inspired to find innovative and sustainable ways to improve
+                    out products<br>
+                    Get inspired by their success stories
+                </p>
+            </div>
+            <div class="my-5 grid md:grid-cols-4 gap-3">
+                {{collection:testimonials limit="4"}}
+                <div class="grid">
+                    {{partial:testimony-snippet}}
+                </div>
+                {{/collection:testimonials}}
+            </div>
+        </div>
+    </section>
 </main>

@@ -1,28 +1,9 @@
 <section>
     <div class="mx-auto max-w-[1280px]">
+        <figure class="my-10">
+            <img src="{{{{glide :src='profile_picture' width='1280' height='650' fit='crop_focal'}}}}" alt="{{post_image:alt}}">
+        </figure>
         <div class="py-10 px-3 md:px-10">
-            {{if tags}}
-            <div class="my-5">
-                {{tags}}
-                <span class="bg-green-900 text-white border py-2 px-4 text-xs">{{title}}</span>
-                {{/tags}}
-            </div>
-            {{/if}}
-            <h1 class="text-4xl font-bold">{{title}}</h1>
-            <div class="my-3">
-                <div class="flex gap-3 items-center">
-                    <div>
-                        <img alt="{{author:title}}" src="{{author:profile_picture}}" class="h-12 rounded-full">
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-600">{{date}}</p>
-                        <h6 class="capitalize text-sm font-bold"><span class="text-gray-600">By</span> {{author:title}}</h6>
-                    </div>
-                </div>
-            </div>
-            <figure class="my-10">
-                <img src="{{{{glide :src='post_image' width='1280' height='650' fit='crop_focal'}}}}" alt="{{post_image:alt}}">
-            </figure>
             <div class="my-3 md:px-10 ">
                 <ul class="flex gap-3 items-center">
 
@@ -49,8 +30,14 @@
                 </ul>
             </div>
 
-            <div class="my-5 grid  lg:grid-cols-7 gap-2 md:px-10">
-                <div class="lg:col-span-5">
+            <div class="my-3 grid  md:px-10">
+                <div >
+                    <h1 class="text-4xl font-bold">{{full_name}}</h1>
+                    <blockquote  class="my-3 text-xl font-black bg-slate-100 p-2 rounded-sm">
+                        {{summary}}
+                    </blockquote>
+
+
                     <div class="max-w-full prose lg:prose-xl prose-p:leading-loose
                 prose-p:font-normal prose-heading:my-5
                 prose-a:text-underline prose-heading:text-xl prose-p:text-lg">
@@ -59,28 +46,6 @@
                 </div>
 
 
-                <div class="lg:col-span-2">
-
-                    <div class="sticky top-0">
-                        <h2 class="text-xl font-bold font-poppins">Latest Stories</h2>
-                        <div class="grid gap-2 my-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1">
-                            {{collection:blog limit="3"}}
-                            {{ if no_results }}
-                            <p class="text-lg">Aww, there are no results.</p>
-                            {{ /if }}
-                            {{posts}}
-                            <div class="grid">
-                                {{partial:blog-snippet}}
-                            </div>
-
-                            {{/collection:blog}}
-
-                        </div>
-
-                    </div>
-
-
-                </div>
             </div>
         </div>
     </div>

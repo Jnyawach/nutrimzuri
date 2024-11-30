@@ -4,5 +4,6 @@ blueprint: page
 title: FAQs
 author: ffb86834-185f-48aa-b383-224d5267976f
 updated_by: ffb86834-185f-48aa-b383-224d5267976f
-updated_at: 1732453929
+updated_at: 1732962676
+template: faqs/index
 ---

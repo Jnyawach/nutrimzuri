@@ -1,9 +1,8 @@
 <section>
     <div class="mx-auto max-w-[1280px]">
         <div class="py-10 px-3 md:px-10">
-            <h1 class="text-4xl font-bold">Nutrimzuri Stories</h1>
-
-            {{collection:blog paginate="10" as="posts"}}
+            <h1 class="text-4xl font-bold">Customer Success Stories</h1>
+            {{collection:testimonials paginate="10" as="posts"}}
             <div class="my-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 py-10">
 
                 {{ if no_results }}
@@ -11,7 +10,7 @@
                 {{ /if }}
                 {{posts}}
                 <div class="grid">
-                    {{partial:blog-snippet}}
+                    {{partial:testimony-snippet}}
                 </div>
                 {{/posts}}
 
@@ -29,10 +28,7 @@
                     {{ /paginate }}
                 </div>
             </div>
-            {{/collection:blog}}
+            {{/collection:testimonials}}
         </div>
     </div>
 </section>
-
-
-
