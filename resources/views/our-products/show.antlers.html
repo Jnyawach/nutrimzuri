@@ -8,47 +8,28 @@
                 {{/category}}
             </div>
             {{/if}}
-            <h1 class="text-4xl font-bold">{{name}}</h1>
-            </div>
-            <figure class="my-10">
-                <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}">
-            </figure>
-            <div class="my-3 md:px-10 ">
-                <ul class="flex gap-3 items-center">
-
-                    <li>
-                        <a href="https://www.linkedin.com/company/nutrimzuri/" target="_blank">
-                            <button class="h-10 w-10 border text-green-200 hover:bg-green-500/10 border-green-900 p-1 flex place-content-center rounded-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 self-center text-green-900" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/>
-                                </svg>
-                            </button>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=100093121485232&mibextid=ZbWKwL" target="_blank">
-                            <button class="h-10 w-10 border text-green-200 hover:bg-green-500/10 border-green-900 p-1 flex place-content-center rounded-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 self-center text-green-900" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/>
-                                </svg>
-                            </button>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="my-5 grid  lg:grid-cols-7 gap-2 md:px-10">
-                <div class="lg:col-span-5">
-                    <div class="max-w-full prose lg:prose-xl prose-p:leading-loose
+            <h1 class="text-4xl font-bold my-4">{{name}}</h1>
+           <div class="grid md:grid-cols-5 gap-5">
+               <div class="md:col-span-2 my-5">
+                   <figure class="bg-gray-100 rounded-md">
+                       <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}">
+                   </figure>
+               </div>
+               <div class="md:col-span-3">
+                   <div class="lg:col-span-5">
+                       <div class="max-w-full prose lg:prose-xl prose-p:leading-loose
                 prose-p:font-normal prose-heading:my-5
                 prose-a:text-underline prose-heading:text-xl prose-p:text-lg">
-                        {{description | full_urls}}
-                    </div>
-                </div>
+                           {{description | full_urls}}
+                       </div>
+                   </div>
 
-            </div>
+               </div>
+           </div>
+
+
+
+
         </div>
     </div>
 </section>
