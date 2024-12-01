@@ -4,5 +4,6 @@ blueprint: page
 title: 'Our Products'
 author: ffb86834-185f-48aa-b383-224d5267976f
 updated_by: ffb86834-185f-48aa-b383-224d5267976f
-updated_at: 1732958183
+updated_at: 1732973417
+template: our-products/index
 ---

@@ -1,0 +1,68 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: hidden
+              required: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              remove_empty_nodes: false
+              container: models
+              type: bard
+              display: Description
+              validate:
+                - required
+          -
+            handle: image
+            field:
+              max_files: 1
+              min_files: 1
+              container: models
+              type: assets
+              display: Image
+              validate:
+                - required
+      -
+        display: SEO
+        instructions: 'SEO Details'
+        fields:
+          -
+            handle: meta_description
+            field:
+              type: textarea
+              display: 'Meta description'
+              validate:
+                - required
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: category
+            field:
+              type: terms
+              taxonomies:
+                - category
+              display: Category
+              mode: select

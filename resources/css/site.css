@@ -19,6 +19,8 @@ body{
     @apply border rounded-lg py-3 px-5 text-green-900 hover:bg-green-500/10 hover:border-green-900 duration-500
 }
 
-
+input, textarea, select{
+    @apply border rounded-lg py-3 px-5 text-gray-800 border-gray-300 w-full
+}
 
 

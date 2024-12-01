@@ -1,0 +1,58 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              placeholder: 'Enter your name'
+              type: text
+              display: Name
+              validate:
+                - required
+                - 'max:60'
+          -
+            handle: email
+            field:
+              input_type: email
+              placeholder: 'Enter your Email'
+              type: text
+              display: Email
+              validate:
+                - required
+          -
+            handle: cellphone
+            field:
+              input_type: tel
+              placeholder: 'Enter your cellphone number'
+              type: text
+              display: Cellphone
+              validate:
+                - required
+          -
+            handle: subject
+            field:
+              options:
+                -
+                  key: Inquiry
+                  value: Inquiry
+                -
+                  key: Products
+                  value: Products
+                -
+                  key: Support
+                  value: Support
+              placeholder: 'Selec Subject'
+              type: select
+              display: Subject
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: textarea
+              display: Content
+              validate:
+                - required

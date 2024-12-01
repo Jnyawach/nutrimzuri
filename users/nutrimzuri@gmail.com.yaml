@@ -40,3 +40,17 @@ preferences:
         - full_name
         - organization
         - status
+    products:
+      columns:
+        - name
+        - images
+        - status
+        - category
+  forms:
+    contact_us:
+      columns:
+        - datestamp
+        - name
+        - cellphone
+        - email
+        - subject

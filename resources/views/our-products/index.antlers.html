@@ -1,0 +1,39 @@
+<section>
+    <div class="mx-auto max-w-[1280px]">
+        <div class="py-10 px-3 md:px-10">
+            <h1 class="text-4xl font-bold">Our Products</h1>
+
+            {{collection:products paginate="10" as="posts"}}
+            <div class="my-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 py-10">
+
+                {{ if no_results }}
+                <p class="text-lg">Aww, there are no results.</p>
+                {{ /if }}
+                {{posts}}
+                <div class="grid">
+                    {{partial:product-snippet}}
+                </div>
+                {{/posts}}
+
+
+
+            </div>
+            <div class="my-5 flex justify-center">
+                <div>
+                    {{ paginate }}
+                    <a href="{{ prev_page }}" class="btn-outline-primary btn-small">⬅</a>
+
+                    <span class="mx-2">Page {{ current_page }} of {{ total_pages }}</span>
+
+                    <a href="{{ next_page }}" class="btn-outline-primary btn-small">➡</a>
+                    {{ /paginate }}
+                </div>
+            </div>
+            {{/collection:products}}
+        </div>
+    </div>
+</section>
+
+
+
+

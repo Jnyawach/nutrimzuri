@@ -24,6 +24,8 @@ tabs:
               container: models
               type: bard
               display: Answer
+              validate:
+                - required
   sidebar:
     display: Sidebar
     sections:
