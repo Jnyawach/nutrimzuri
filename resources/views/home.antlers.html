@@ -49,7 +49,7 @@
                         </p>
                     </div>
                     <div class="border-t p-5">
-                        <a class="text-yellow-500">Read article...</a>
+                        <a class="text-yellow-500"  href="{{ link to='sustainability' absolute='true' }}">Read article...</a>
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
                         </p>
                     </div>
                     <div class="border-t p-5">
-                        <a class="text-yellow-500">Read article...</a>
+                        <a class="text-yellow-500" href="{{ link to='responsible-feeding' absolute='true' }}">Read article...</a>
                     </div>
                 </div>
 
@@ -79,10 +79,37 @@
                         </p>
                     </div>
                     <div class="border-t p-5">
-                        <a class="text-yellow-500">Read article...</a>
+                        <a class="text-yellow-500"  href="{{ link to='customer-success-stories' absolute='true' }}">Read article...</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="max-w-[1280px] mx-auto my-5 p-3">
+            <div class="flex justify-between">
+                <h2 class="text-3xl font-black my-3">Our Products</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-2">
+                {{category}}
+
+                <div>
+                    <h6>{{title}}</h6>
+                </div>
+                {{/category}}
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="bg-slate-50">
+        <div class="max-w-[1280px] mx-auto my-5 p-3 grid md:grid-cols-2">
+       <div>
+           <h2 class="text-3xl font-black my-3">Our Environmental impact</h2>
+       </div>
         </div>
     </section>
     <section>
