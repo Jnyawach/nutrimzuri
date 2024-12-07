@@ -46,6 +46,12 @@ preferences:
         - images
         - status
         - category
+    slideshow:
+      columns:
+        - title
+        - slug
+        - status
+        - image
   forms:
     contact_us:
       columns:

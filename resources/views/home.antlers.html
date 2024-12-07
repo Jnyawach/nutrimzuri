@@ -1,185 +1,125 @@
 <main>
-    <section>
-        {{ asset url="/assets/static/cows-feeding.jpg" }}
-        <div class="bg-center bg-no-repeat bg-cover h-[70vh]" style="background-image: url('{{url}}')">
-            <div class="flex h-full self-center bg-black/20 p-10">
-               <div class="text-white my-auto w-full md:w-3/4 lg:w-1/2">
-                   <h2 class="text-md font-bold uppercase">Nutrimzuri Farmcare Limited</h2>
-                   <h1 class="font-black text-5xl">
-                       We incorporate principles of circular economy to produce sustainable
-                       animal feeds and feed ingredients.
-                   </h1>
+   <section class="relative">
+       {{collection:slideshow limit="4"}}
+      <div class="h-[80vh] overflow-hidden">
+          <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{image:alt}}"
+               class="w-full"
+          >
+      </div>
+       {{/collection:slideshow}}
 
-                   <div class="my-8 px-5 flex gap-3 items-center">
-                      <a href="{{ link to='about-us' absolute='true' }}" class="btn-primary text-lg flex items-center gap-4 hover:gap-6 transition-all duration-300">
-                          Learn More
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 24 24">
-                              <path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"/>
-                          </svg>
-                      </a>
-
-                       <a href="{{ link to='our-outlets' absolute='true' }}" class="text-xl font-medium flex items-center gap-1 underline">
-                           <span>Locate our outlets</span>
-                           <svg xmlns="http://www.w3.org/2000/svg" class="text-yellow-500 h-5" viewBox="0 0 24 24">
-                               <path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794l-1.414-1.414L17.585 5H13V3z"/>
-                           </svg>
-                       </a>
-
-                   </div>
-               </div>
-            </div>
-        </div>
-        {{ /asset }}
-
-
-    </section>
-
-    <section class="pb-8 md:-mt-10">
-        <div class="max-w-[1280px] mx-auto p-3">
-            <div class="grid md:grid-cols-3  gap-3">
-                <div class="border rounded-sm overflow-hidden bg-white border-t-yellow-500">
-                    <div class="h-2 bg-yellow-500"></div>
-                    <div class="p-5 h-80">
-                        <h2 class="font-bold text-green-900 text-lg my-2">Sustainability</h2>
-                        <p class="text-lg leading-loose">
-                            Discover how Nutrimzuri is revolutionizing the manufacturing of sustainable feeds.
-                            By utilizing innovative techniques and eco-friendly raw materials, we minimize environmental
-                            impact while maintaining high nutritional value.
-
-                        </p>
-                    </div>
-                    <div class="border-t p-5">
-                        <a class="text-yellow-500"  href="{{ link to='sustainability' absolute='true' }}">Read article...</a>
-                    </div>
-                </div>
-
-                <div class="border rounded-sm overflow-hidden  bg-white border-t-yellow-500">
-                    <div class="h-2 bg-yellow-500"></div>
-                    <div class="p-5 h-80">
-                        <h2 class="font-bold text-green-900 text-lg my-2">Responsible feeding</h2>
-                        <p class="text-lg leading-loose">
-                            Our responsible feeding program is a long-term sustainability
-                            initiative focused on creating value within food production supply chains.
-                            It guides both our corporate and individual business unit actions.
-                        </p>
-                    </div>
-                    <div class="border-t p-5">
-                        <a class="text-yellow-500" href="{{ link to='responsible-feeding' absolute='true' }}">Read article...</a>
-                    </div>
-                </div>
-
-                <div class="border rounded-sm overflow-hidden  bg-white border-t-yellow-500">
-                    <div class="h-2 bg-yellow-500"></div>
-                    <div class="p-5 h-80">
-                        <h2 class="font-bold text-green-900 text-lg my-2">What our customers say</h2>
-                        <p class="text-lg leading-loose">
-                            Read about our customer success stories and how Nutrimzuri Farmcare Limited has made a difference.
-                            Our customers share how our sustainable feeding solutions have improved their operations
-
-                        </p>
-                    </div>
-                    <div class="border-t p-5">
-                        <a class="text-yellow-500"  href="{{ link to='customer-success-stories' absolute='true' }}">Read article...</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
+   </section>
+    <section class="bg-slate-50">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
-            <div class="flex justify-between">
-                <h2 class="text-3xl font-black my-3">Our Products</h2>
+
+            <div class="grid text-center">
+               <div>
+                   <div class="py-5 text-center">
+                       <h2 class="text-4xl font-black ">How we do this</h2>
+                       <hr class="w-16 mx-auto my-3 border-green-900 border-2">
+                   </div>
+                   <p class="text-lg">
+                       We incorporate principles of circular economy to<br>
+                       produce sustainable animal feeds and feed ingredients.
+                   </p>
+                   <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto md:w-2/3 divide-y divide-gray-200 md:divide-y-0">
+                       <div class="p-3">
+                           {{ asset url="/assets/static/waste-recycling.svg" }}
+                           <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
+                           {{ /asset }}
+                           <p class="leading-relaxed">
+                               Converting underutilized agro-processing wastes into valuable
+                               animal feed ingredients and complete feeds
+                           </p>
+                       </div>
+                       <div class="p-3">
+                           {{ asset url="/assets/static/upcycling.svg" }}
+                           <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
+                           {{ /asset }}
+                            <p class="leading-relaxed">
+                                Up-cycling of waste generated at our facilities into feed ingredients thus closing the loop.
+                            </p>
+                       </div>
+                       <div class="p-3">
+                           {{ asset url="/assets/static/vertical-waste-integration.svg" }}
+                           <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
+                           {{ /asset }}
+                           <p class="leading-relaxed">
+                               We vertically integrate our supply chain by producing and processing key ingredients for our feed.
+                           </p>
+                       </div>
+                   </div>
+
+               </div>
+
             </div>
-            <div class="grid md:grid-cols-4 gap-2">
-                {{category}}
-
-                <div>
-                    <h6>{{title}}</h6>
-                </div>
-                {{/category}}
-
-            </div>
-
-
         </div>
     </section>
 
     <section class="bg-slate-50">
-        <div class="max-w-[1280px] mx-auto my-5 p-3 grid md:grid-cols-2">
-       <div>
-           <h2 class="text-3xl font-black my-3">Our Environmental impact</h2>
-       </div>
-        </div>
-    </section>
-    <section>
         <div class="max-w-[1280px] mx-auto my-5 p-3">
-            <div class="flex justify-between">
-                <h2 class="text-3xl font-black my-3">Latest from out Blog</h2>
-                <a href="{{ link to='blog' absolute='true' }}" >
-                    <button class="btn-outline">
-                        Read more stories
-                    </button>
-                </a>
-            </div>
-            <div class="my-5 grid md:grid-cols-2 gap-3">
-                <div class="md:col-span-1 grid border">
-                    {{collection:blog limit="1"}}
-                    <a href="{{url}}" title="{{title}}" class="h-full">
-                    <div class="overflow-hidden rounded-sm relative h-full">
-                        <img src="{{glide :src='post_image'  fit='crop_focal'}}" alt="{{blog_image:alt}}"
-                             class="hover:scale-105 duration-500 h-full object-cover"
-                        >
-                       <div class="absolute w-full z-10 bottom-0
-                       bg-gradient-to-t from-black/60 to-transparent">
-                          <div class="p-5">
-                              <p class="my-2 text-sm font-medium text-white">Date: {{date}}</p>
-                              <h1 class="text-2xl text-white font-bold">{{title}}</h1>
-                          </div>
-                           <div class="border-t p-3">
-                               <p class="text-white">Read article</p>
-                           </div>
-                       </div>
-                    </div>
-                    </a>
-                    {{/collection:blog}}
-                </div>
 
-                <div class="md:col-span-1 grid grid-cols-2 gap-3">
-                    {{collection:blog limit="2" skip="1"}}
-                    <div class="grid">
-                        {{partial:blog-snippet}}
+            <div class="grid text-center">
+                <div>
+                    <div class="py-5 text-center">
+                        <h2 class="text-4xl font-black ">Our Impact</h2>
+                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
-                    {{/collection:blog}}
-                </div>
+                    <p class="text-lg">
+                        We incorporate principles of circular economy to<br>
+                        produce sustainable animal feeds and feed ingredients.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto md:w-2/3 divide-y divide-gray-200 md:divide-y-0">
+                        <div class="p-3">
+                            {{ asset url="/assets/static/waste-recycling.svg" }}
+                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
+                            {{ /asset }}
+                            <p class="leading-relaxed">
+                                Converting underutilized agro-processing wastes into valuable
+                                animal feed ingredients and complete feeds
+                            </p>
+                        </div>
+                        <div class="p-3">
+                            {{ asset url="/assets/static/upcycling.svg" }}
+                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
+                            {{ /asset }}
+                            <p class="leading-relaxed">
+                                Up-cycling of waste generated at our facilities into feed ingredients thus closing the loop.
+                            </p>
+                        </div>
+                        <div class="p-3">
+                            {{ asset url="/assets/static/vertical-waste-integration.svg" }}
+                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
+                            {{ /asset }}
+                            <p class="leading-relaxed">
+                                We vertically integrate our supply chain by producing and processing key ingredients for our feed.
+                            </p>
+                        </div>
+                    </div>
 
+                </div>
 
             </div>
         </div>
     </section>
-    <section class="bg-slate-100 p-3">
+
+    <section class="bg-slate-50">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
-            <div class="flex justify-between">
-                <h2 class="text-3xl font-black my-3">Customer Success stories</h2>
-                <a href="{{ link to='blog' absolute='true' }}" >
-                    <button class="btn-outline">
-                       See all stories
-                    </button>
-                </a>
-            </div>
-            <div class="my-3">
-                <p class="text-lg">
-                    At Nutrimzuri we treat our customer success as our own. We are inspired to find innovative and sustainable ways to improve
-                    out products<br>
-                    Get inspired by their success stories
-                </p>
-            </div>
-            <div class="my-5 grid md:grid-cols-4 gap-3">
-                {{collection:testimonials limit="4"}}
-                <div class="grid">
-                    {{partial:testimony-snippet}}
+
+            <div class="grid text-center">
+                <div>
+                    <div class="py-5 text-center">
+                        <h2 class="text-4xl font-black ">Our Partners</h2>
+                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
+                    </div>
+                    <p class="text-lg">
+                        We incorporate principles of circular economy to<br>
+                        produce sustainable animal feeds and feed ingredients.
+                    </p>
+
+
                 </div>
-                {{/collection:testimonials}}
+
             </div>
         </div>
     </section>

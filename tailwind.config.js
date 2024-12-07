@@ -15,6 +15,7 @@ export default {
         extend: {
             fontFamily: {
                 'matter': ['Matter', 'serif'],
+                'outfit': ['Outfit', 'sans-serif'],
             },
         },
     },

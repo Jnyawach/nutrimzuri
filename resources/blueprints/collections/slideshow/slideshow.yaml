@@ -1,0 +1,45 @@
+title: SlideShow
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+              validate:
+                - required
+                - 'max:150'
+          -
+            handle: image
+            field:
+              container: models
+              type: assets
+              display: Image
+              validate:
+                - required
+                - image
+                - 'mimes:jpg,jpeg,png'
+              max_files: 1
+              min_files: 1
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
