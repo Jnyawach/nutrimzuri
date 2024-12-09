@@ -1,14 +1,65 @@
 <main>
-   <section class="relative">
-       {{collection:slideshow limit="4"}}
-      <div class="h-[80vh] overflow-hidden">
-          <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{image:alt}}"
-               class="w-full"
-          >
-      </div>
-       {{/collection:slideshow}}
 
-   </section>
+    <section>
+        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative overflow-hidden  h-[80vh]">
+                {{collection:slideshow limit="4"}}
+                <div class="hidden duration-1000 ease-in-out relative" data-carousel-item>
+                    <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{image:alt}}"
+                         class="absolute block w-full -translate-x-1/2  left-1/2"
+                    >
+                </div>
+                {{/collection:slideshow}}
+
+
+
+            </div>
+
+
+            <div class="absolute h-full w-full top-0 p-5 z-50 flex place-content-center bg-black/40">
+                <div class="my-auto md:w-1/2 text-center">
+                    <h1 class="text-5xl text-white font-black uppercase leading-relaxed">
+                        Creating sustainable  solution for animal & crop nutrition
+                    </h1>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="bg-slate-50">
+        <div class="max-w-[1280px] mx-auto my-5 p-3">
+
+            <div class="grid text-center">
+                <div>
+                    <div class="py-5 text-center">
+                        <h2 class="text-4xl font-black ">Our Products</h2>
+                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto md:w-2/3 divide-y divide-gray-200 md:divide-y-0">
+                        {{collection:products}}
+                        <a title="{{title}}" href="{{url}}">
+                        <div>
+                            <div class="overflow-hidden bg-gray-100 rounded-md">
+                                <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{logo:alt}}"
+                                     class="w-full"
+                                >
+
+                            </div>
+                            <h3 class="text-lg font-bold my-2 underline">{{name}}</h3>
+                            <p>{{meta_description | safe_truncate(90, '... Read more')}}</p>
+                        </div>
+                        </a>
+                        {{/collection:products}}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section class="bg-slate-50">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
 
@@ -56,7 +107,7 @@
         </div>
     </section>
 
-    <section class="bg-slate-50">
+    <section class="bg-slate-100">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
 
             <div class="grid text-center">
@@ -65,36 +116,49 @@
                         <h2 class="text-4xl font-black ">Our Impact</h2>
                         <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
-                    <p class="text-lg">
-                        We incorporate principles of circular economy to<br>
-                        produce sustainable animal feeds and feed ingredients.
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto md:w-2/3 divide-y divide-gray-200 md:divide-y-0">
-                        <div class="p-3">
-                            {{ asset url="/assets/static/waste-recycling.svg" }}
-                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
-                            {{ /asset }}
-                            <p class="leading-relaxed">
-                                Converting underutilized agro-processing wastes into valuable
-                                animal feed ingredients and complete feeds
-                            </p>
+
+                    <div class="grid md:grid-cols-2 gap-5 my-8 mx-auto">
+                        <div>
+                            <div  class="overflow-hidden rounded-lg">
+                                {{ asset url="/assets/static/farmer-harvesting-tomato.jpg" }}
+                                <img src="{{url}}" class="w-full hover:scale-105 duration-300" alt="{{alt}}">
+                                {{ /asset }}
+                            </div>
                         </div>
-                        <div class="p-3">
-                            {{ asset url="/assets/static/upcycling.svg" }}
-                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
-                            {{ /asset }}
-                            <p class="leading-relaxed">
-                                Up-cycling of waste generated at our facilities into feed ingredients thus closing the loop.
-                            </p>
+                        <div class="grid md:grid-cols-3 gap-2 self-center">
+                            <div>
+                                {{ asset url="/assets/static/climate-action.svg" }}
+                                <img src="{{url}}" class="h-16 mx-auto my-3" alt="{{alt}}" >
+                                {{ /asset }}
+                                <h3 class="text-md font-bold my-3">Climate action</h3>
+                                <p>
+                                    We support climate action by promoting sustainable agriculture through
+                                    waste recycling and eco-friendly feed and fertilizer production.
+                                </p>
+                            </div>
+                            <div>
+                                {{ asset url="/assets/static/food-security.svg" }}
+                                <img src="{{url}}" class="h-16 mx-auto my-3" alt="{{alt}}" >
+                                {{ /asset }}
+                                <h3 class="text-md font-bold my-3">Food security</h3>
+                                <p>
+                                    We advance food security by providing sustainable feed solutions
+                                    that enhance livestock productivity and support resilient farming systems.
+                                </p>
+                            </div>
+                            <div>
+                                {{ asset url="/assets/static/regenerative-agriculture.svg" }}
+                                <img src="{{url}}" class="h-16 mx-auto my-3" alt="{{alt}}" >
+                                {{ /asset }}
+                                <h3 class="text-md font-bold my-3">Regenerative agriculture</h3>
+                                <p>
+                                   We champion regenerative agriculture by recycling waste into
+                                    nutrient-rich inputs, restoring soil health, and promoting sustainable farming practices.
+                                </p>
+                            </div>
                         </div>
-                        <div class="p-3">
-                            {{ asset url="/assets/static/vertical-waste-integration.svg" }}
-                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
-                            {{ /asset }}
-                            <p class="leading-relaxed">
-                                We vertically integrate our supply chain by producing and processing key ingredients for our feed.
-                            </p>
-                        </div>
+
+
                     </div>
 
                 </div>
