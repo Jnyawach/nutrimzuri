@@ -1,16 +1,21 @@
 <main>
 
     <section>
-        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <div  class="relative w-full">
             <!-- Carousel wrapper -->
             <div class="relative overflow-hidden  h-[80vh]">
-                {{collection:slideshow limit="4"}}
-                <div class="hidden duration-1000 ease-in-out relative" data-carousel-item>
+
+                <div class="absolute inset-0 w-full h-full flex transition-opacity duration-700 ease-in-out"  id="carousel-images">
+                    {{collection:slideshow limit="3"}}
                     <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{image:alt}}"
-                         class="absolute block w-full -translate-x-1/2  left-1/2"
+                         id="slide{{ index }}"
+                         class="absolute inset-0 w-full h-full object-cover
+                            transition-opacity duration-1500 ease-in-out
+                         {{ if first }}opacity-100{{ else }}opacity-0{{ /if }} "
                     >
+                    {{/collection:slideshow}}
                 </div>
-                {{/collection:slideshow}}
+
 
 
 
@@ -176,7 +181,7 @@
                         <h2 class="text-4xl font-black ">Our Partners</h2>
                         <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
-                    <div class="my-3 grid md:grid-cols-5 gap-2">
+                    <div class="my-3 grid grid-cols-2 md:grid-cols-5  gap-2">
                         {{collection:partners}}
                         <div class="overflow-hidden border border-gray-50 rounded-md">
                             <img src="{{glide :src='logo'  fit='crop_focal'}}" alt="{{logo:alt}}"
@@ -195,3 +200,30 @@
         </div>
     </section>
 </main>
+
+<script>
+    let currentSlide = 0;
+    const totalSlides = 2;
+    console.log(totalSlides)
+
+    function showSlide(slideIndex) {
+        for (let i = 1; i <= totalSlides; i++) {
+            const slide = document.getElementById(`slide${i}`);
+            if (i === slideIndex) {
+                slide.classList.remove('opacity-0');
+                slide.classList.add('opacity-100');
+            } else {
+                slide.classList.remove('opacity-100');
+                slide.classList.add('opacity-0');
+            }
+        }
+        currentSlide = slideIndex;
+    }
+
+    // Optional: Auto-Slide
+    setInterval(() => {
+        const nextSlide = currentSlide === totalSlides ? 1 : currentSlide + 1;
+        showSlide(nextSlide);
+    }, 5000);
+</script>
+
