@@ -37,7 +37,8 @@
         <div class="max-w-[1280px] mx-auto my-5 p-3">
         <div x-data="{
         currentSlideIndex: 1,
-         productCount:  parseInt($el.getAttribute('data-product-count')),
+         productCount:  {{ collection:products as='products' chunk='4' }}{{products  | count}}{{/collection:products}},
+         itemCount: this.productCount,
     previous() {
         if (this.currentSlideIndex > 1) {
             this.currentSlideIndex = this.currentSlideIndex - 1
@@ -55,8 +56,6 @@
         }
     },
 }"
-             x-init="$el.setAttribute('data-product-count', productCount)"
-             data-product-count="{{ collection:products }} {{ (count / 4) | ceil }}{{ /collection:products }}"
              class="relative w-full overflow-hidden">
 
 
@@ -77,6 +76,7 @@
             <!-- slides -->
             <!-- Change min-h-[50svh] to your preferred height size -->
             <div class="relative min-h-[80svh] w-full hidden md:block">
+
 
                 {{collection:products as="products"}}
                 {{products chunk="4"}}
