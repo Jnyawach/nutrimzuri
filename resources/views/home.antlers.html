@@ -37,23 +37,28 @@
         <div class="max-w-[1280px] mx-auto my-5 p-3">
         <div x-data="{
         currentSlideIndex: 1,
+         productCount:  parseInt($el.getAttribute('data-product-count')),
     previous() {
         if (this.currentSlideIndex > 1) {
             this.currentSlideIndex = this.currentSlideIndex - 1
         } else {
             // If it's the first slide, go to the last slide
-            this.currentSlideIndex = 4
+            this.currentSlideIndex = this.productCount
         }
     },
     next() {
-        if (this.currentSlideIndex < 4) {
+        if (this.currentSlideIndex < this.productCount) {
             this.currentSlideIndex = this.currentSlideIndex + 1
         } else {
             // If it's the last slide, go to the first slide
             this.currentSlideIndex = 1
         }
     },
-}" class="relative w-full overflow-hidden">
+}"
+             x-init="$el.setAttribute('data-product-count', productCount)"
+             data-product-count="{{ collection:products }} {{ (count / 4) | ceil }}{{ /collection:products }}"
+             class="relative w-full overflow-hidden">
+
 
             <!-- previous button -->
             <button type="button" class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="previous slide" x-on:click="previous()">
@@ -71,22 +76,26 @@
 
             <!-- slides -->
             <!-- Change min-h-[50svh] to your preferred height size -->
-            <div class="relative min-h-[60svh] w-full">
+            <div class="relative min-h-[80svh] w-full hidden md:block">
+
                 {{collection:products as="products"}}
-                {{products chunk="2"}}
+                {{products chunk="4"}}
                 <div x-show="currentSlideIndex =={{ index}} + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
-                    <div class="grid grid-cols-3 gap-2">
+                    <div class="grid grid-cols-4 gap-2">
                         {{chunk}}
+                        <a title="{{title}}" href="{{url}}">
                        <div>
                            <div class="overflow-hidden bg-gray-100 rounded-md">
                                <img src="{{glide :src='image' width=300  fit='crop_focal'}}" alt="{{logo:alt}}"
+                                    class="mx-auto"
 
 
                                >
-
                            </div>
-                           {{title}}
+                           <h3 class="text-lg font-bold my-2 underline">{{name}}</h3>
+                           <p>{{meta_description | safe_truncate(90, '... Read more')}}</p>
                        </div>
+                        </a>
                         {{/chunk}}
                     </div>
 
