@@ -1,14 +1,114 @@
-<section class="py-3 bg-green-900">
-    <div class="flex justify-center items-center">
-
+<section class="hidden md:block py-3 bg-green-900 px-5 fixed w-full z-50">
+    <div class="flex justify-between items-center">
         <div>
             {{brand}}
             <a href="/" title="Nutrimzuri Logo">
-                <img src="{{yello_logo}}" class="h-16" alt="green_logo:alt">
+                <img src="{{yello_logo}}" class="h-12" alt="green_logo:alt">
             </a>
             {{/brand}}
         </div>
+        <nav class="flex gap-5 items-center">
+            <ul class="flex gap-3 text-white">
+                {{nav:main_navigation}}
+                <li class="py-1">
+                    <a href="{{url}}" title="{{title}}" class="hover:underline hover:text-yellow-500">{{title}}</a>
+                </li>
+                {{/nav:main_navigation}}
+
+            </ul>
+            <ul class="flex gap-3 items-center">
+
+                <li>
+                    <a href="https://www.linkedin.com/company/nutrimzuri/" target="_blank">
+                        <button class="h-10 w-10 border text-yellow-500  border-yellow-500 p-1 flex place-content-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 self-center" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/>
+                            </svg>
+                        </button>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100093121485232&mibextid=ZbWKwL" target="_blank">
+                        <button class="h-10 w-10 border text-yellow-500  border-yellow-500 p-1 flex place-content-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 self-center" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/>
+                            </svg>
+                        </button>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
 
     </div>
 
+
 </section>
+
+<section class="bg-green-900 md:hidden fixed w-full z-50">
+    <div class="flex justify-between p-3 items-center">
+        <div>
+            {{brand}}
+            <a href="/" title="Nutrimzuri Logo">
+                <img src="{{yello_logo}}" class="h-11" alt="Nutrimzuri Logo">
+            </a>
+            {{/brand}}
+        </div>
+        <div class="grid">
+            <ul class="flex items-center gap-6 px-2 py-2">
+                <li>
+                    <button type="button"  data-drawer-target="menu-drawer"
+                            class="flex h-10 w-10 border border-yellow-500 rounded-md place-content-center items-center"
+                            data-drawer-show="menu-drawer" data-drawer-placement="right" aria-controls="menu-drawer">
+                        <svg class="h-7 w-7 text-yellow-500 self-center" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3 4h18v2H3zm0 7h18v2H3zm0 7h18v2H3z"/>
+                        </svg>
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<div id="menu-drawer" class="fixed top-0 right-0 z-50 h-screen  overflow-y-auto transition-transform translate-x-full bg-white w-full" tabindex="-1" aria-labelledby="drawer-label">
+    <div class="border-b">
+        <div class="flex justify-between items-center p-5">
+            {{brand}}
+            <a href="/" title="Nutrimzuri Logo">
+                <img src="{{green_logo}}" class="h-10" alt="Nutrimzuri Logo">
+            </a>
+            {{/brand}}
+            <button type="button" data-drawer-hide="menu-drawer" aria-controls="drawer-example" class="text-xl" >
+
+                <svg class="h-6 w-6 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path d="M315.3 411.3c-6.253 6.253-16.37 6.253-22.63 0L160 278.6l-132.7 132.7c-6.253 6.253-16.37 6.253-22.63 0c-6.253-6.253-6.253-16.37 0-22.63L137.4 256L4.69 123.3c-6.253-6.253-6.253-16.37 0-22.63c6.253-6.253 16.37-6.253 22.63 0L160 233.4l132.7-132.7c6.253-6.253 16.37-6.253 22.63 0c6.253 6.253 6.253 16.37 0 22.63L182.6 256l132.7 132.7C321.6 394.9 321.6 405.1 315.3 411.3z"/>
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="my-3 p-3">
+        <ul class="space-y-5">
+            {{nav:main_navigation}}
+            <li>
+                <a href="{{url}}" title="{{title}}" class="w-full flex justify-between font-medium">
+                    <span>{{title}}</span>
+                    <svg class="h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                        <path d="M219.9 266.7L75.89 426.7c-5.906 6.562-16.03 7.094-22.59 1.188c-6.918-6.271-6.783-16.39-1.188-22.62L186.5 256L52.11 106.7C46.23 100.1 46.75 90.04 53.29 84.1C59.86 78.2 69.98 78.73 75.89 85.29l144 159.1C225.4 251.4 225.4 260.6 219.9 266.7z"/>
+                    </svg>
+                </a>
+            </li>
+            {{/nav:main_navigation}}
+
+        </ul>
+    </div>
+
+
+
+
+</div>
