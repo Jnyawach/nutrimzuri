@@ -41,7 +41,7 @@
             </div>
         <div x-data="{
         currentSlideIndex: 1,
-         productCount:  {{ collection:products as='products' chunk='4' }}{{products  | count}}{{/collection:products}},
+         productCount:  {{ collection:count in='products'}},
          itemCount: this.productCount,
     previous() {
         if (this.currentSlideIndex > 1) {
@@ -79,35 +79,37 @@
 
             <!-- slides -->
             <!-- Change min-h-[50svh] to your preferred height size -->
-            <div class="relative min-h-[80svh] w-full hidden md:block">
+            <div class="relative min-h-[90svh] md:min-h-[80svh] w-full">
+                {{collection:products}}
+                <div x-show="currentSlideIndex =={{ index}} + 1" class="absolute inset-0 w-full flex justify-center"
+                     x-transition.opacity.duration.1000ms>
+                    <div class="w-full md:w-3/4">
 
-
-                {{collection:products as="products"}}
-                {{products chunk="4"}}
-                <div x-show="currentSlideIndex =={{ index}} + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
-                    <div class="grid grid-cols-4 gap-2">
-                        {{chunk}}
-                        <a title="{{title}}" href="{{url}}">
-                       <div>
-                           <div class="overflow-hidden bg-gray-100 rounded-md">
-                               <img src="{{glide :src='image' width=300  fit='crop_focal'}}" alt="{{logo:alt}}"
-                                    class="mx-auto"
-
+                       <div class="grid md:grid-cols-5 gap-3">
+                           <div class="md:col-span-3 bg-gray-100 flex justify-center rounded-md">
+                               <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{logo:alt}}"
+                                    class="w-[400px]"
 
                                >
                            </div>
-                           <h3 class="text-lg font-bold my-2 underline">{{name}}</h3>
-                           <p>{{meta_description | safe_truncate(90, '... Read more')}}</p>
+                         <div class="md:col-span-2">
+                             {{if category}}
+                             <div class="my-5">
+                                 {{category}}
+                                 <span class="bg-green-900 text-white border py-2 px-4 text-xs">{{title}}</span>
+                                 {{/category}}
+                             </div>
+                             {{/if}}
+                             <h3 class="text-lg font-bold my-2 underline">{{name}}</h3>
+                             <p class="text-md md:text-lg">{{meta_description}}</p>
+                             <a title="{{title}}" href="{{url}}" class="text-green-900 font-bold">Read more...</a>
+                         </div>
                        </div>
-                        </a>
-                        {{/chunk}}
+
                     </div>
-
-
-
                 </div>
-                {{/products}}
                 {{/collection:products}}
+
             </div>
 
 
@@ -115,38 +117,6 @@
         </div>
     </section>
 
-    <section class="bg-slate-50 md:hidden">
-        <div class="max-w-[1280px] mx-auto my-5 p-3">
-
-            <div class="grid text-center">
-                <div>
-                    <div class="py-5 text-center">
-                        <h2 class="text-4xl font-black ">Our Products</h2>
-                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
-                    </div>
-
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 my-8 mx-auto md:w-2/3 divide-y divide-gray-200 md:divide-y-0">
-                        {{collection:products}}
-                        <a title="{{title}}" href="{{url}}">
-                        <div>
-                            <div class="overflow-hidden bg-gray-100 rounded-md">
-                                <img src="{{glide :src='image' height=400   fit='crop_focal'}}" alt="{{logo:alt}}"
-                                     class="w-full"
-                                >
-
-                            </div>
-                            <h3 class="text-lg font-bold my-2 underline">{{name}}</h3>
-                            <p>{{meta_description | safe_truncate(90, '... Read more')}}</p>
-                        </div>
-                        </a>
-                        {{/collection:products}}
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
     <section class="bg-slate-50">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
 
@@ -160,7 +130,7 @@
                        We incorporate principles of circular economy to<br>
                        produce sustainable animal feeds, feed ingredients, and organic fertilizers:
                    </p>
-                   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 my-8 mx-auto /5 lg:w-2/3 divide-y divide-gray-200 md:divide-y-0">
+                   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 my-8 mx-auto  xl:w-3/4 divide-y divide-gray-200 md:divide-y-0">
                        <div class="p-3">
                            {{ asset url="/assets/static/waste-recycling.svg" }}
                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
@@ -170,7 +140,7 @@
                                animal feed ingredients and complete feeds
                            </p>
                            <div class="my-3 flex justify-center">
-                               <div class="h-14 w-14  border-2 rounded-full border-green-900 flex place-content-center">
+                               <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
                                    <p class="text-2xl font-bold self-center text-green-900">1</p>
                                </div>
                            </div>
@@ -183,7 +153,7 @@
                                 Up-cycling of waste generated at our facilities into feed ingredients thus closing the loop.
                             </p>
                            <div class="my-3 flex justify-center">
-                               <div class="h-14 w-14  border-2 rounded-full border-green-900 flex place-content-center">
+                               <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
                                    <p class="text-2xl font-bold self-center text-green-900">2</p>
                                </div>
                            </div>
@@ -196,7 +166,7 @@
                                We vertically integrate our supply chain by producing and processing key ingredients for our feed.
                            </p>
                            <div class="my-3 flex justify-center">
-                               <div class="h-14 w-14  border-2 rounded-full border-green-900 flex place-content-center">
+                               <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
                                    <p class="text-2xl font-bold self-center text-green-900">3</p>
                                </div>
                            </div>
@@ -322,19 +292,19 @@
         </div>
     </section>
 
-    <section class="bg-slate-50">
-        <div class="max-w-[1280px] mx-auto my-5 p-3 py-14">
+    <section class="bg-yellow-500">
+        <div class="max-w-[1280px] mx-auto  p-3 py-14">
 
             <div class="grid text-center">
                 <div>
                     <div class="py-5 text-center">
-                        <h2 class="text-4xl font-black ">Our Partners</h2>
-                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
+                        <h2 class="text-4xl font-black text-white">Our Partners</h2>
+                        <hr class="w-16 mx-auto my-3 border-white border-2">
                     </div>
                     <div class="my-3 grid grid-cols-2 md:grid-cols-6  gap-2">
                         {{collection:partners}}
                         <div class="overflow-hidden border border-gray-50 rounded-md">
-                            <img src="{{glide :src='logo'  fit='crop_focal'}}" alt="{{logo:alt}}"
+                            <img src="{{glide :src='logo' fit='crop_focal'}}" alt="{{logo:alt}}"
                                  class="w-full"
                             >
                         </div>
