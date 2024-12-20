@@ -1,35 +1,38 @@
-<section>
-    {{ asset url="/assets/static/waste-transformation.jpg" }}
+<main class="py-14">
+    <section>
+        {{ asset url="/assets/static/waste-transformation.jpg" }}
         <img src="{{url}}" class="w-full" alt="{{alt}}">
-    {{ /asset }}
-</section>
-<section class="mx-auto max-w-[1280px] py-10 space-y-8 p-3">
-    <div>
-        <h1 class="text-3xl font-black my-3">About Us</h1>
+        {{ /asset }}
+    </section>
+    <section class="mx-auto max-w-[1280px] py-10 space-y-8 p-3">
         <div>
-            <div class="max-w-full prose lg:prose-xl prose-p:leading-loose prose-a:underline prose-a:text-green-900
+            <h1 class="text-3xl font-black my-3">About Us</h1>
+            <div>
+                <div class="max-w-full prose lg:prose-xl prose-p:leading-loose prose-a:underline prose-a:text-green-900
     prose-p:font-medium prose-heading:my-5 prose-h2:text-2xl
     prose-a:text-underline prose-heading:text-xl prose-p:text-lg"
-            >
-                {{content}}
+                >
+                    {{content}}
+                </div>
             </div>
         </div>
-    </div>
-    <div>
-        <h1 class="text-3xl font-black my-4">Meet our team</h1>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {{collection:team}}
-            <div>
-                <img src="{{glide :src='profile_picture' width='300' height='300' fit='crop_focal'}}" alt="{{profile_picture:alt}}">
+        <div>
+            <h1 class="text-3xl font-black my-4">Meet our team</h1>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                {{collection:team}}
                 <div>
-                    <h6 class="text-lg font-bold">{{full_name}}</h6>
-                    <p class="my-2 text-sm font-medium text-green-900">{{title}}</p>
-                    <p class="my-2 text-sm  text-gray-600">{{description}}</p>
+                    <img src="{{glide :src='profile_picture' width='300' height='300' fit='crop_focal'}}" alt="{{profile_picture:alt}}">
+                    <div>
+                        <h6 class="text-lg font-bold">{{full_name}}</h6>
+                        <p class="my-2 text-sm font-medium text-green-900">{{title}}</p>
+                        <p class="my-2 text-sm  text-gray-600">{{description}}</p>
+
+                    </div>
 
                 </div>
-
+                {{/collection:team}}
             </div>
-            {{/collection:team}}
         </div>
-    </div>
-</section>
+    </section>
+
+</main>

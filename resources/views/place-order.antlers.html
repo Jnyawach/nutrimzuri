@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<section class="mx-auto max-w-[1280px] py-20 space-y-8 p-3">
+    <div class="flex justify-center">
+        <div class="mx-auto w-full md:w-3/4">
+            <h1 class="text-3xl font-black my-5">Place on Order</h1>
+            <div class="grid">
+                <div>
+                    {{ form:order }}
 
-</body>
-</html>
+                    {{ if success }}
+                    <div class="bg-green-300 text-white p-2">
+                        {{ success }}
+                    </div>
+                    {{ /if }}
+
+                    {{ if errors }}
+                    <div class="bg-red-300 text-white p-2">
+                        {{ errors }}
+                        {{ value }}<br>
+                        {{ /errors }}
+                    </div>
+                    {{ /if }}
+                    <div class="spce-y-4">
+                        {{ fields }}
+                        <div class="p-2">
+                            <label class="text-sm">{{ display }}</label>
+                            <div class="p-1">{{ field }}</div>
+                            {{ if error }}
+                            <p class="text-gray-500">{{ error }}</p>
+                            {{ /if }}
+                        </div>
+                        {{ /fields }}
+                    </div>
+
+                    <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+
+                    <div class="flex justify-end">
+                        <button type="submit" class="btn-primary">Submit</button>
+                    </div>
+
+
+                    {{ /form:order }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

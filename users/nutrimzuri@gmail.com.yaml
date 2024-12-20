@@ -60,3 +60,10 @@ preferences:
         - cellphone
         - email
         - subject
+    order:
+      columns:
+        - datestamp
+        - name
+        - product
+        - email
+        - cellphone

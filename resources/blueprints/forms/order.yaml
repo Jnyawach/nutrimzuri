@@ -32,27 +32,35 @@ tabs:
               validate:
                 - required
           -
-            handle: subject
+            handle: product
             field:
               options:
                 -
-                  key: Inquiry
-                  value: Inquiry
+                  key: poultry_feeds
+                  value: 'Poultry Feeds'
                 -
-                  key: Products
-                  value: Products
+                  key: 'organic _fertilizer'
+                  value: 'Organic Fertilizer'
                 -
-                  key: Support
-                  value: Support
-              placeholder: 'Select Subject'
+                  key: insect_protein_powder
+                  value: 'Insect Protein Powder'
+                -
+                  key: muguka_plus
+                  value: 'Muguka Plus'
+                -
+                  key: bone_meal
+                  value: 'Bone Meal'
+                -
+                  key: broken_maize
+                  value: 'Broken Maize (Jenga)'
+              placeholder: 'Select products'
+              multiple: true
               type: select
-              display: Subject
+              display: Product
               validate:
                 - required
           -
-            handle: content
+            handle: additional_information
             field:
               type: textarea
-              display: Content
-              validate:
-                - required
+              display: 'Additional Information'
