@@ -1,0 +1,55 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: partner_as
+            field:
+              options:
+                -
+                  key: investor
+                  value: Investor
+                -
+                  key: supplier
+                  value: Supplier
+                -
+                  key: collaborator
+                  value: Collaborator
+              type: radio
+              display: 'Partner as'
+              validate:
+                - required
+          -
+            handle: name
+            field:
+              placeholder: 'Enter your name'
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              placeholder: 'Enter your Email'
+              type: text
+              display: Email
+              validate:
+                - required
+          -
+            handle: cellphone
+            field:
+              input_type: tel
+              placeholder: 'Enter your cellphone number'
+              type: text
+              display: Cellphone
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              placeholder: 'Do you have a message for us'
+              type: textarea
+              display: Message

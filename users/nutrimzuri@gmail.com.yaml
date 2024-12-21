@@ -67,3 +67,9 @@ preferences:
         - product
         - email
         - cellphone
+    partner:
+      columns:
+        - datestamp
+        - cellphone
+        - partner_as
+        - email

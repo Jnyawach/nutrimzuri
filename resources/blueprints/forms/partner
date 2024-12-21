@@ -1,0 +1,66 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              placeholder: 'Enter your name'
+              type: text
+              display: Name
+              validate:
+                - required
+                - 'max:60'
+          -
+            handle: email
+            field:
+              input_type: email
+              placeholder: 'Enter your Email'
+              type: text
+              display: Email
+              validate:
+                - required
+          -
+            handle: cellphone
+            field:
+              input_type: tel
+              placeholder: 'Enter your cellphone number'
+              type: text
+              display: Cellphone
+              validate:
+                - required
+          -
+            handle: product
+            field:
+              options:
+                -
+                  key: poultry_feeds
+                  value: 'Poultry Feeds'
+                -
+                  key: 'organic _fertilizer'
+                  value: 'Organic Fertilizer'
+                -
+                  key: insect_protein_powder
+                  value: 'Insect Protein Powder'
+                -
+                  key: muguka_plus
+                  value: 'Muguka Plus'
+                -
+                  key: bone_meal
+                  value: 'Bone Meal'
+                -
+                  key: broken_maize
+                  value: 'Broken Maize (Jenga)'
+              placeholder: 'Select products'
+              multiple: true
+              type: select
+              display: Product
+              validate:
+                - required
+          -
+            handle: additional_information
+            field:
+              type: textarea
+              display: 'Additional Information'
