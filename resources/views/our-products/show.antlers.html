@@ -9,13 +9,13 @@
             </div>
             {{/if}}
             <h1 class="text-4xl font-bold my-4">{{name}}</h1>
-           <div class="grid md:grid-cols-5 gap-5">
+           <div class="grid gap-5">
                <div class="md:col-span-2 my-5">
                    <figure class="bg-gray-100 rounded-md">
                        <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}">
                    </figure>
                </div>
-               <div class="md:col-span-3">
+               <div>
                    <div class="lg:col-span-5">
                        <div class="max-w-full prose lg:prose-xl prose-p:leading-loose
                 prose-p:font-normal prose-heading:my-5
