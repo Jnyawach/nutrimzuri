@@ -1,0 +1,38 @@
+<div class="bg-white border relative rounded-sm overflow-hidden p-2 cursor-pointer"
+     data-modal-target="default-modal-{{id}}" data-modal-toggle="default-modal-{{id}}">
+    <img src="{{glide :src='image' fit='crop_focal'}}" alt="{{image:alt}}"
+         class="h-full w-full object-cover"
+    >
+</div>
+
+<div id="default-modal-{{id}}" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 bg-black/50
+     justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-5xl max-h-full overflow-hidden">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg overflow-hidden">
+            <div class="h-full w-full relative">
+                <img src="{{glide :src='image' fit='crop_focal'}}" alt="{{image:alt}}"
+                     class="h-full w-full object-cover"
+                >
+                <button class="absolute top-2 right-2 bg-white/20 h-10 w-10 rounded-full flex place-content-center"
+                        data-modal-hide="default-modal-{{id}}"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white self-center"
+                         viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+                <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/50 py-5 from-60%  ">
+                   <div class="text-white p-3">
+                       <h1 class="text-lg font-bold my-2">{{title}}</h1>
+                       <p>{{description}}</p>
+                   </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
