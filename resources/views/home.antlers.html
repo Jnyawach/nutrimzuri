@@ -87,6 +87,103 @@
 
         </div>
     </section>
+    <section class="bg-slate-50">
+        <div class="max-w-[1280px] mx-auto my-5 p-3">
+            <div class="py-5 text-center">
+                <h2 class="text-4xl font-black ">Our Products</h2>
+                <hr class="w-16 mx-auto my-3 border-green-900 border-2">
+            </div>
+            <div class="grid">
+                {{taxonomy:category}}
+                {{if entries_count}}
+                <div>
+                    <div class="flex justify-center my-5">
+                        <div class="justify-center bg-green-900 p-1 px-3 rounded-md">
+                            <h5 class="text-white">{{title}}</h5>
+                        </div>
+
+                    </div>
+
+                    <div x-data="{
+        currentSlideIndex: 1,
+         productCount:  {{entries_count}},
+         itemCount: this.productCount,
+    previous() {
+        if (this.currentSlideIndex > 1) {
+            this.currentSlideIndex = this.currentSlideIndex - 1
+        } else {
+            // If it's the first slide, go to the last slide
+            this.currentSlideIndex = this.productCount
+        }
+    },
+    next() {
+        if (this.currentSlideIndex < this.productCount) {
+            this.currentSlideIndex = this.currentSlideIndex + 1
+        } else {
+            // If it's the last slide, go to the first slide
+            this.currentSlideIndex = 1
+        }
+    },
+}"
+                         class="relative w-full overflow-hidden">
+
+
+                        <!-- previous button -->
+                        <button type="button" class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="previous slide" x-on:click="previous()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pr-0.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- next button -->
+                        <button type="button" class="absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="next slide" x-on:click="next()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pl-0.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- slides -->
+                        <!-- Change min-h-[50svh] to your preferred height size -->
+                        <div class="relative min-h-[90svh] md:min-h-[80svh] w-full">
+                            {{entries as="products"}}
+                            {{products}}
+                            <div x-show="currentSlideIndex =={{ index}} + 1" class="absolute inset-0 w-full flex justify-center"
+                                 x-transition.opacity.duration.1000ms>
+                                <div class="w-full md:w-3/4">
+
+                                    <div class="grid md:grid-cols-5 gap-3">
+                                        <div class="md:col-span-3 bg-gray-100 flex justify-center rounded-md">
+                                            <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{logo:alt}}"
+                                                 class="w-[400px]"
+
+                                            >
+                                        </div>
+                                        <div class="md:col-span-2">
+
+                                            <h3 class="text-lg font-bold my-2 underline">{{name}}</h3>
+                                            <p class="text-md md:text-lg">{{meta_description}}</p>
+                                            <a title="{{title}}" href="{{url}}" class="text-green-900 font-bold">Read more...</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {{/products}}
+                            {{/entries}}
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                {{/if}}
+                {{/taxonomy:category}}
+            </div>
+        </div>
+    </section>
+
+    <!--
 
     <section class="bg-slate-50">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
@@ -118,22 +215,21 @@
              class="relative w-full overflow-hidden">
 
 
-            <!-- previous button -->
+
             <button type="button" class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="previous slide" x-on:click="previous()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pr-0.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                 </svg>
             </button>
 
-            <!-- next button -->
+
             <button type="button" class="absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="next slide" x-on:click="next()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pl-0.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
             </button>
 
-            <!-- slides -->
-            <!-- Change min-h-[50svh] to your preferred height size -->
+
             <div class="relative min-h-[90svh] md:min-h-[80svh] w-full">
                 {{collection:products}}
                 <div x-show="currentSlideIndex =={{ index}} + 1" class="absolute inset-0 w-full flex justify-center"
@@ -173,6 +269,8 @@
 
         </div>
     </section>
+
+    -->
 
     <section class="bg-slate-50">
         <div class="max-w-[1280px] mx-auto my-5 p-3">
@@ -246,7 +344,7 @@
                         <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto py-5">
+                    <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto py-5 w-full xl:w-3/4">
 
                         <div>
                             {{ asset url="/assets/static/climate-action.svg" }}
@@ -288,57 +386,41 @@
         </div>
     </section>
 
-    <section class="bg-yellow-500">
+    <section class="bg-slate-100">
         <div class="max-w-[1280px] mx-auto p-3 py-10">
 
             <div class="grid">
                 <div>
                     <div class="py-5 text-center">
-                        <h2 class="text-4xl font-black text-white">Key Metrics</h2>
-                        <hr class="w-16 mx-auto my-3 border-white border-2">
+                        <h2 class="text-4xl font-black ">Key Metrics</h2>
+                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-5 my-8 mx-auto py-5">
-                        <div >
-                            {{ asset url="/assets/static/key-metrics.jpg" }}
-                            <img src="{{url}}" class="max-h-96 rounded-lg hover:scale-105 duration-300" alt="{{alt}}" >
+                    <div class="grid md:grid-cols-3 gap-5 my-8 mx-auto py-5 w-full xl:w-3/4">
+                        <div class="text-center">
+                            {{ asset url="/assets/static/jobs-created.png" }}
+                            <img src="{{url}}" class="h-16 mx-auto my-3" alt="{{alt}}" >
                             {{ /asset }}
-
+                            <p>
+                                50 direct Jobs created (80% youth & 40% women).
+                                150 indirect jobs created (80% youth & 50% women).
+                            </p>
                         </div>
-
-                        <div class="self-center">
-                            <ul class="space-y-5 text-2xl">
-                                <li class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-900" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="m10 15.17l9.192-9.191l1.414 1.414L10 17.999l-6.364-6.364l1.414-1.414z"/>
-                                    </svg>
-                                    <span>50 direct Jobs created (80% youth & 40% women).</span>
-
-                                </li>
-                                <li class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-900" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="m10 15.17l9.192-9.191l1.414 1.414L10 17.999l-6.364-6.364l1.414-1.414z"/>
-                                    </svg>
-                                    <span>150 indirect jobs created (80% youth & 50% women).</span>
-
-                                </li>
-                                <li class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-900" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="m10 15.17l9.192-9.191l1.414 1.414L10 17.999l-6.364-6.364l1.414-1.414z"/>
-                                    </svg>
-                                    <span>30 tons of  organic waste collected and repurposed daily</span>
-
-                                </li>
-                                <li class="flex gap-2 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-900" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="m10 15.17l9.192-9.191l1.414 1.414L10 17.999l-6.364-6.364l1.414-1.414z"/>
-                                    </svg>
-                                    <span>Approximately 60 tons of GHG emissions saved daily</span>
-
-                                </li>
-
-                            </ul>
-
+                        <div class="text-center">
+                            {{ asset url="/assets/static/waste-collected.png" }}
+                            <img src="{{url}}" class="h-16 mx-auto my-3" alt="{{alt}}" >
+                            {{ /asset }}
+                           <p>
+                               30 tons of  organic waste collected and repurposed daily<br>
+                           </p>
+                        </div>
+                        <div class="text-center">
+                            {{ asset url="/assets/static/ghg-emission.png" }}
+                            <img src="{{url}}" class="h-16 mx-auto my-3" alt="{{alt}}" >
+                            {{ /asset }}
+                            <p>
+                                Approximately 60 tons of GHG emissions saved daily.
+                            </p>
                         </div>
 
                     </div>
@@ -349,14 +431,14 @@
         </div>
     </section>
 
-    <section class="bg-yellow-500">
+    <section>
         <div class="max-w-[1280px] mx-auto  p-3 py-14">
 
             <div class="grid text-center">
                 <div>
                     <div class="py-5 text-center">
-                        <h2 class="text-4xl font-black text-white">Our Partners</h2>
-                        <hr class="w-16 mx-auto my-3 border-white border-2">
+                        <h2 class="text-4xl font-black ">Our Partners</h2>
+                        <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
                     <div class="my-3 grid grid-cols-2 md:grid-cols-6  gap-2">
                         {{collection:partners}}
