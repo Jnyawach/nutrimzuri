@@ -1,6 +1,6 @@
 <section  class="pt-14">
     <div class="mx-auto max-w-[1280px]">
-        <div class="py-10 px-3 md:px-10">
+        <div class="py-10 px-3 md:px-10 text-center">
             {{if category}}
             <div class="my-5">
                 {{category}}
@@ -10,12 +10,12 @@
             {{/if}}
             <h1 class="text-4xl font-bold my-4">{{name}}</h1>
            <div class="grid gap-5">
-               <div class="md:col-span-2 my-5">
-                   <figure class="bg-gray-100 rounded-md">
-                       <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}">
+               <div class="md:col-span-2 my-5 flex justify-center">
+                   <figure class="rounded-md">
+                       <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}" class="max-w-[500px]">
                    </figure>
                </div>
-               <div>
+               <div class="flex justify-center">
                    <div class="lg:col-span-5">
                        <div class="max-w-full prose lg:prose-xl prose-p:leading-loose
                 prose-p:font-normal prose-heading:my-5
