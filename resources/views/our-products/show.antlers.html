@@ -9,10 +9,11 @@
             </div>
             {{/if}}
             <h1 class="text-4xl font-bold my-4 text-center">{{name}}</h1>
-           <div class="grid gap-5">
-               <div class="md:col-span-2 my-5 flex justify-center">
+           <div class="grid">
+               <div class="my-5 flex justify-center">
                    <figure class="rounded-md">
-                       <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}" class="max-w-[500px]">
+                       <img src="{{{{glide :src='image'  fit='crop_focal'}}}}" alt="{{image:alt}}"
+                            class="sm:max-w-[500px]">
                    </figure>
                </div>
                <div class="flex justify-center w-full">
