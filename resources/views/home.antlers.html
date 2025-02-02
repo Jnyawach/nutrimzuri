@@ -67,7 +67,6 @@
                         >
                         {{if index==0}}
 
-
                         <div class="absolute w-full h-full bg-black/30  top-0  flex place-content-center">
                            <div class="self-center w-full md:w-2/3 lg:w-1/2">
                                <h1 class="text-4xl md:text-5xl text-white font-black uppercase leading-loose text-center">
@@ -125,7 +124,7 @@
         }
     },
 }"
-                         class="relative w-full overflow-hidden">
+                         class="relative w-full overflow-hidden md:w-3/5 mx-auto">
 
 
                         <!-- previous button -->
@@ -144,14 +143,14 @@
 
                         <!-- slides -->
                         <!-- Change min-h-[50svh] to your preferred height size -->
-                        <div class="relative min-h-[90svh] w-full">
+                        <div class="relative h-full w-full">
                             {{entries as="products"}}
                             {{products}}
-                            <div x-show="currentSlideIndex =={{ index}} + 1" class="absolute inset-0 w-full flex justify-center"
-                                 x-transition.opacity.duration.1000ms>
-                                <div class="w-full md:w-3/4">
+                            <div x-show="currentSlideIndex =={{ index}} + 1" class="w-full inset-0 flex justify-center"
+                                >
+                                <div class="w-full ">
 
-                                    <div class="grid md:h-96">
+                                    <div class="grid">
                                         <div class="flex justify-center rounded-md">
                                             <img src="{{glide :src='image'  fit='crop_focal'}}" alt="{{logo:alt}}"
                                                  class="w-[400px]"
@@ -200,7 +199,7 @@
                        produce sustainable animal feeds, feed ingredients, and organic fertilizers:
                    </p>
                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 my-8 mx-auto  xl:w-3/4 divide-y divide-gray-200 md:divide-y-0">
-                       <div class="p-3">
+                       <div class="p-3 md:h-80 relative">
                            {{ asset url="/assets/static/waste-recycling.svg" }}
                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
                            {{ /asset }}
@@ -208,36 +207,42 @@
                                Converting underutilized agro-processing wastes into valuable
                                animal feed ingredients and complete feeds
                            </p>
-                           <div class="my-3 flex justify-center">
-                               <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
-                                   <p class="text-2xl font-bold self-center text-green-900">1</p>
+                           <div class="md:absolute md:bottom-0 w-full">
+                               <div class="my-3 flex justify-center">
+                                   <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
+                                       <p class="text-2xl font-bold self-center text-green-900">1</p>
+                                   </div>
                                </div>
                            </div>
                        </div>
-                       <div class="p-3">
+                       <div class="p-3  md:h-80 relative">
                            {{ asset url="/assets/static/upcycling.svg" }}
                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
                            {{ /asset }}
                             <p class="leading-relaxed">
                                 Up-cycling of waste generated at our facilities into feed ingredients thus closing the loop.
                             </p>
-                           <div class="my-3 flex justify-center">
-                               <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
+                           <div class="md:absolute md:bottom-0 w-full">
+                                <div class="my-3 flex justify-center">
+                                    <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
                                    <p class="text-2xl font-bold self-center text-green-900">2</p>
-                               </div>
+                                    </div>
+                                </div>
                            </div>
                        </div>
-                       <div class="p-3">
+                       <div class="p-3 md:h-80 relative">
                            {{ asset url="/assets/static/vertical-waste-integration.svg" }}
                            <img src="{{url}}" class="h-24 mx-auto my-3" alt="{{alt}}" >
                            {{ /asset }}
                            <p class="leading-relaxed">
                                We vertically integrate our supply chain by producing and processing key ingredients for our feed.
                            </p>
-                           <div class="my-3 flex justify-center">
-                               <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
+                           <div class="md:absolute md:bottom-0 w-full">
+                                <div class="my-3 flex justify-center">
+                                <div class="h-12 w-12  border-2 rounded-full border-green-900 flex place-content-center">
                                    <p class="text-2xl font-bold self-center text-green-900">3</p>
-                               </div>
+                                </div>
+                             </div>
                            </div>
                        </div>
                    </div>
