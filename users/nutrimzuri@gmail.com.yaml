@@ -52,6 +52,13 @@ preferences:
         - slug
         - status
         - image
+    metrics:
+      columns:
+        - icon
+        - title
+        - slug
+        - date
+        - status
   forms:
     contact_us:
       columns:

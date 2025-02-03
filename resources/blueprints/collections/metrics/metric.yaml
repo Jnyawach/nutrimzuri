@@ -18,6 +18,7 @@ tabs:
               container: models
               type: assets
               display: Icon
+              max_files: 1
   sidebar:
     display: Sidebar
     sections:
@@ -29,3 +30,11 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required

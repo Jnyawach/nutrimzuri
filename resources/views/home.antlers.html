@@ -65,16 +65,15 @@
                              class="object-cover w-full h-full"
 
                         >
-                        {{if index==0}}
 
                         <div class="absolute w-full h-full bg-black/30  top-0  flex place-content-center">
                            <div class="self-center w-full md:w-2/3 lg:w-1/2">
-                               <h1 class="text-4xl md:text-5xl text-white font-black uppercase leading-loose text-center">
+                               <h1 class="text-4xl md:text-5xl text-white font-black uppercase leading-relaxed text-center">
                                    Creating sustainable solutions for animal & crop nutrition.
                                </h1>
                            </div>
                         </div>
-                        {{/if}}
+
 
 
                     </div>
@@ -312,17 +311,20 @@
             <div class="grid">
                 <div>
                     <div class="py-5 text-center">
-                        <h2 class="text-4xl font-black ">Key Metrics</h2>
+                        <h2 class="text-4xl font-black ">Key Impacts</h2>
                         <hr class="w-16 mx-auto my-3 border-green-900 border-2">
                     </div>
                     <div class="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 md:divide-x divide-gray-300 my-4">
                         {{collection:metrics}}
+
                         <div class="text-center text-lg p-3">
+
                             <div class="flex justify-center my-5">
-                                <svg class="text-green-900" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="m10 15.17l9.192-9.191l1.414 1.414L10 17.999l-6.364-6.364l1.414-1.414z"/>
-                                </svg>
+                                <img src="{{glide :src='icon' fit='crop_focal'}}"
+                                     alt="{{icon:alt}}" class="h-12">
+
                             </div>
+
                             <p>{{title}}</p>
                         </div>
                         {{/collection:metrics}}
