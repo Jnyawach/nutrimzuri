@@ -19,10 +19,125 @@ description:
     type: paragraph
     content:
       -
-        type: hardBreak
-      -
         type: text
-        text: 'Nutrimzuri Bone Meal is a high-quality, natural source of essential minerals, specifically designed to boost the health and productivity of your livestock. Made from finely ground animal bones, it is rich in calcium and phosphorus, two critical nutrients for the development of strong bones, healthy teeth, and optimal growth.'
+        text: 'Nutrimzuri Bone Meal is a high-quality, natural source of essential minerals, specifically designed to boost the health and productivity of your livestock. Made from finely ground animal bones, it is rich in calcium and phosphorus, two critical nutrients for developing strong bones, healthy teeth, and optimal growth.'
+  -
+    type: table
+    content:
+      -
+        type: tableRow
+        content:
+          -
+            type: tableHeader
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: 'Usage '
+          -
+            type: tableHeader
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: Guide
+          -
+            type: tableHeader
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: Instructions
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: 'This is a guide'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: 'use this guide'
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: Instruction
+      -
+        type: tableRow
+        content:
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
+          -
+            type: tableCell
+            attrs:
+              colspan: 1
+              rowspan: 1
+              colwidth: null
+            content:
+              -
+                type: paragraph
   -
     type: heading
     attrs:
@@ -66,7 +181,7 @@ description:
                 text: 'Enhances Productivity'
               -
                 type: text
-                text: ': Supports increased milk yield in dairy animals and improves egg shell quality in poultry.'
+                text: ': Supports increased milk yield in dairy animals and improves eggshell quality in poultry.'
       -
         type: listItem
         content:
@@ -242,13 +357,12 @@ description:
       -
         type: text
         text: 'At Nutrimzuri Farmcare Limited, we prioritize quality and sustainability. Our bone meal is carefully processed to retain maximum nutritional value, ensuring your animals receive the best possible care. With Nutrimzuri Bone Meal, you can be confident in your farm’s productivity and profitability.'
-image:
-  - bone-meal.png
+image: bone-meal.png
 meta_description: 'Nutrimzuri Bone Meal is a high-quality, natural source of essential minerals, specifically designed to boost the health and productivity of your livestock. Made from finely ground animal bones, it is rich in calcium and phosphorus, two critical nutrients for the development of strong bones, healthy teeth, and optimal growth.'
 category:
   - feeds
 updated_by: ffb86834-185f-48aa-b383-224d5267976f
-updated_at: 1732976017
+updated_at: 1739205546
 images:
   - print-broken-maize-mockup.png
 ---

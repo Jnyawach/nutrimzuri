@@ -46,6 +46,7 @@ preferences:
         - images
         - status
         - category
+      after_save: continue_editing
     slideshow:
       columns:
         - title
