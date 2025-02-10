@@ -1,5 +1,6 @@
 <?php
 
+use Statamic\Stache\Stores;
 return [
 
     /*
@@ -38,7 +39,15 @@ return [
     */
 
     'stores' => [
-        //
+        'collections' => [
+            'class' => Stores\CollectionsStore::class,
+            'directory' => base_path('resources/collections'),
+        ],
+
+        'entries' => [
+            'class' => Stores\EntriesStore::class,
+            'directory' => base_path('content/collections'),
+        ],
     ],
 
     /*
