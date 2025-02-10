@@ -1,0 +1,18 @@
+title: Blog
+template: blog/show
+layout: layout
+mount: d2698cf4-29e1-4cab-9281-4226dc00ed79
+taxonomies:
+  - tags
+revisions: false
+route: '{mount}/{slug}.html'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
