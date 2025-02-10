@@ -21,7 +21,9 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {{collection:team}}
                 <div>
-                    <img src="{{glide :src='profile_picture' width='300' height='300' fit='crop_focal'}}" alt="{{profile_picture:alt}}">
+                    <img src="{{glide :src='profile_picture' width='300' height='300' fit='crop_focal'}}" alt="{{profile_picture:alt}}"
+                         class="grayscale"
+                    >
                     <div>
                         <h6 class="text-lg font-bold">{{full_name}}</h6>
                         <p class="my-2 text-sm font-medium text-green-900">{{title}}</p>
